@@ -1,0 +1,208 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>ようこそ、ジョン</title>
+		<link rel="icon" type="image/png" href="./img/favicon.png" />
+		<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				  //URL of the RSS feed
+				  var feed_url = 'http://www.gamespot.com/feeds/news/';
+				$.ajax({
+				  url      : 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(feed_url),
+				  dataType : 'json',
+				  success  : function (data) {
+					if (data.responseData.feed && data.responseData.feed.entries) {
+					  $.each(data.responseData.feed.entries, function (i, e) {
+						$("#news1").append('<a target="_blank" class="mlink" href="' + e.link + '">' + e.title + '.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					  });
+					}
+				  }
+				});
+				$("#cat1-container").click(function(){
+					$("div.cat1-container").css("background-color","#FFFFFF");
+					$("div.cat2-container").css("background-color","#F4F4F4");
+					$("div.cat3-container").css("background-color","#F4F4F4");
+					$("div.cat4-container").css("background-color","#F4F4F4");
+					$("div.cat5-container").css("background-color","#F4F4F4");
+					$("div.cat1-container").css("border-left-width","0px");
+					$("div.cat2-container").css("border-left-width","1px");
+					$("div.cat3-container").css("border-left-width","1px");
+					$("div.cat4-container").css("border-left-width","1px");
+					$("div.cat5-container").css("border-left-width","1px");
+					$("#selected-cat-container1").show();
+					$("#selected-cat-container2").hide();
+					$("#selected-cat-container3").hide();
+					$("#selected-cat-container4").hide();
+					$("#selected-cat-container5").hide();
+				});
+				$("#cat2-container").click(function(){
+					$("div.cat1-container").css("background-color","#F4F4F4");
+					$("div.cat2-container").css("background-color","#FFFFFF");
+					$("div.cat3-container").css("background-color","#F4F4F4");
+					$("div.cat4-container").css("background-color","#F4F4F4");
+					$("div.cat5-container").css("background-color","#F4F4F4");
+					$("div.cat1-container").css("border-left-width","1px");
+					$("div.cat2-container").css("border-left-width","0px");
+					$("div.cat3-container").css("border-left-width","1px");
+					$("div.cat4-container").css("border-left-width","1px");
+					$("div.cat5-container").css("border-left-width","1px");
+					$("#selected-cat-container1").hide();
+					$("#selected-cat-container2").show();
+					$("#selected-cat-container3").hide();
+					$("#selected-cat-container4").hide();
+					$("#selected-cat-container5").hide();
+				});
+				$("#cat3-container").click(function(){
+					$("div.cat1-container").css("background-color","#F4F4F4");
+					$("div.cat2-container").css("background-color","#F4F4F4");
+					$("div.cat3-container").css("background-color","#FFFFFF");
+					$("div.cat4-container").css("background-color","#F4F4F4");
+					$("div.cat5-container").css("background-color","#F4F4F4");
+					$("div.cat1-container").css("border-left-width","1px");
+					$("div.cat2-container").css("border-left-width","1px");
+					$("div.cat3-container").css("border-left-width","0px");
+					$("div.cat4-container").css("border-left-width","1px");
+					$("div.cat5-container").css("border-left-width","1px");
+					$("#selected-cat-container1").hide();
+					$("#selected-cat-container2").hide();
+					$("#selected-cat-container3").show();
+					$("#selected-cat-container4").hide();
+					$("#selected-cat-container5").hide();
+				});
+				$("#cat4-container").click(function(){
+					$("div.cat1-container").css("background-color","#F4F4F4");
+					$("div.cat2-container").css("background-color","#F4F4F4");
+					$("div.cat3-container").css("background-color","#F4F4F4");
+					$("div.cat4-container").css("background-color","#FFFFFF");
+					$("div.cat5-container").css("background-color","#F4F4F4");
+					$("div.cat1-container").css("border-left-width","1px");
+					$("div.cat2-container").css("border-left-width","1px");
+					$("div.cat3-container").css("border-left-width","1px");
+					$("div.cat4-container").css("border-left-width","0px");
+					$("div.cat5-container").css("border-left-width","1px");
+					$("#selected-cat-container1").hide();
+					$("#selected-cat-container2").hide();
+					$("#selected-cat-container3").hide();
+					$("#selected-cat-container4").show();
+					$("#selected-cat-container5").hide();
+				});
+				$("#cat5-container").click(function(){
+					$("div.cat1-container").css("background-color","#F4F4F4");
+					$("div.cat2-container").css("background-color","#F4F4F4");
+					$("div.cat3-container").css("background-color","#F4F4F4");
+					$("div.cat4-container").css("background-color","#F4F4F4");
+					$("div.cat5-container").css("background-color","#FFFFFF");
+					$("div.cat1-container").css("border-left-width","1px");
+					$("div.cat2-container").css("border-left-width","1px");
+					$("div.cat3-container").css("border-left-width","1px");
+					$("div.cat4-container").css("border-left-width","1px");
+					$("div.cat5-container").css("border-left-width","0px");
+					$("#selected-cat-container1").hide();
+					$("#selected-cat-container2").hide();
+					$("#selected-cat-container3").hide();
+					$("#selected-cat-container4").hide();
+					$("#selected-cat-container5").show();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="bump"><p class="bump-text-left">ようこそ、ANON</p><p class="bump-text-right">(っ˘൧͑˘ς)</p></div>
+			
+			<!-- Transparent Image -->
+			<img class="shinobu" src="./img/shinobu.png"></img>
+			
+			<div id="mview-container" class="mview-container"></div>
+			
+			<div class="search-container">
+				<form name="form1" action="http://google.com/search" target="_blank" method="get" >
+					<input type="text" placeholder="google search..." name="q" class="ggs" ></input>
+					<input type="submit" value="web" class="ggweb"></input><input hidden type="text" value="" name="tbm"></input>
+					<input type="submit" value="img" class="ggimg" onclick="javascript: form1.tbm.value='isch';"></input>
+				</form>
+			</div>
+			
+			<!-- Hotlink Categories -->
+			<div id="cat1-container" class="cat1-container">
+				<a href="#" class="hlink">media</a>
+			</div>
+			<div id="cat2-container" class="cat2-container">
+				<a href="#" class="hlink">social</a>
+			</div>
+			<div id="cat3-container" class="cat3-container">
+				<a href="#" class="hlink">shopping</a>
+			</div>
+			<div id="cat4-container" class="cat4-container">
+				<a href="#" class="hlink">boards</a>
+			</div>
+			<div id="cat5-container" class="cat5-container">
+				<a href="#" class="hlink">games</a>
+			</div>
+			
+			<!-- Hotlink Lists -->
+			<div id="selected-cat-container1" class="selected-cat-container">
+				<a href="http://youtube.com" class="clink" target="_blank">youtube</a><br>
+				<a href="http://soundcloud.com" class="clink" target="_blank">soundcloud</a><br>
+				<a href="http://twitch.tv" class="clink" target="_blank">twitch</a><br>
+				<a href="http://newgrounds.com" class="clink" target="_blank">newgrounds</a><br>
+				<a href="http://dagobah.net/flash/" class="clink" target="_blank">dagobah</a><br>
+				<a href="http://www.homestarrunner.com/" class="clink" target="_blank">homestar</a><br>
+				
+			</div>
+			<div id="selected-cat-container2" class="selected-cat-container">
+				<a href="http://facebook.com" class="clink" target="_blank">facebook</a><br>
+				<a href="http://gmail.com" class="clink" target="_blank">gmail</a><br>
+				<a href="http://tumblr.com" class="clink" target="_blank">tumblr</a><br>
+				<a href="http://instagram.com" class="clink" target="_blank">instagram</a><br>
+				<a href="http://society6.com" class="clink" target="_blank">society6</a><br>
+			</div>
+			<div id="selected-cat-container3" class="selected-cat-container">
+				<a href="http://amazon.com" class="clink" target="_blank">amazon</a><br>
+				<a href="http://ebay.com" class="clink" target="_blank">ebay</a><br>
+				<a href="http://massdrop.com" class="clink" target="_blank">massdrop</a><br>
+				<a href="http://craigslist.com" class="clink" target="_blank">craigslist</a><br>
+				<a href="http://j-list.com" class="clink" target="_blank">j-list</a><br>
+				<a href="http://amiami.com" class="clink" target="_blank">amiami</a><br>
+				<a href="http://redbubble.com" class="clink" target="_blank">redbubble</a><br>
+				<a href="http://aliexpress.com" class="clink" target="_blank">aliexpress</a><br>
+			</div>
+			<div id="selected-cat-container4" class="selected-cat-container">
+				<a href="http://4chan.org/wg/" class="clink" target="_blank">/wg/</a><br>
+				<a href="http://4chan.org/w/" class="clink" target="_blank">/w/</a><br>
+				<a href="http://4chan.org/f/" class="clink" target="_blank">/f/</a><br>
+				<a href="http://4chan.org/g/" class="clink" target="_blank">/g/</a><br>
+				<a href="http://4chan.org/gd/" class="clink" target="_blank">/gd/</a><br>
+				<a href="http://neo-geo.com/forums/" class="clink" target="_blank">neogeo</a><br>
+				<a href="http://shmups.system11.org" class="clink" target="_blank">shmups</a><br>
+				<a href="http://darkumbra.net/forums/" class="clink" target="_blank">darkumbra</a><br>
+			</div>
+			<div id="selected-cat-container5" class="selected-cat-container">
+				<a href="http://humblebundle.com" class="clink" target="_blank">humblebundle</a><br>
+				<a href="http://gog.com" class="clink" target="_blank">gog</a><br>
+				<a href="http://store.steampowered.com" class="clink" target="_blank">steam</a><br>
+				<a href="http://gaiaonline.com" class="clink" target="_blank">gaiaonline</a><br>
+				<a href="http://hce.halomaps.org" class="clink" target="_blank">halomaps</a><br>
+				<a href="http://www.stickpage.com/" class="clink" target="_blank">stickpage</a><br>
+			</div>
+			
+			<div id="marquee-container" class="marquee-container">
+				<marquee behavior="scroll" direction="left" id="news1" class="marquee-text"></marquee>
+			</div>
+
+		<script type="text/javascript" src="mview.js"></script>
+		<script type="text/javascript">
+		  var settings = {
+			  target: '#mview-container',
+			  source: 'http://www.typefrag.com/server-status/mumble/ChannelViewerProtocol.aspx?ReturnType=json&HostName=YOUR-MUMBLE-HOSTNAME&PortNumber=YOUR-MUMBLE-PORT',
+			  resurl: '',
+			  refreshinterval: 10
+			};
+		  mv = new MView(settings);
+		  mv.load();
+		</script>
+		</div>
+	</body>
+</html>
